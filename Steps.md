@@ -15,4 +15,25 @@ Kind create cluster
 
 # Step 3: login to docker 
 
-# Step 4: 
+```
+docker login
+```
+
+# Step 4: Create namespace for deployment:
+
+```
+kubectl create ns oai-tutorial
+```
+
+# Step 5: Update helm dependencies:
+
+```
+cd charts/oai-5g-core/oai-5g-basic
+helm dependency update
+```
+
+# Step 6: Deploy command
+
+```
+helm spray --namespace oai-tutorial .
+```
